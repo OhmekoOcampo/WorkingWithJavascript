@@ -1,2 +1,2 @@
-# WorkingWithEventsJS
-Trying to Understand How Events Work in JavaScript
+# WorkingWithEvent
+Trying to Understand How Events Work in JavaScript.
