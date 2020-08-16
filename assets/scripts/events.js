@@ -74,7 +74,13 @@ listItems.forEach(listItem => {
 */
 
 list.addEventListener('click', event => {
-    console.log(event.currentTarget); //Where currentTarget is the ul tag in this case.
-    event.target.classList.toggle('highlight');
-    event.target.closest('li').classList.toggle('highlight'); //closest exists on all dom objects and traverses the ancestor tree. 
+    //314.
+    //console.log(event.currentTarget); //Where currentTarget is the ul tag in this case.
+    //event.target.classList.toggle('highlight');
+    //event.target.closest('li').classList.toggle('highlight'); //closest exists on all dom objects and traverses the ancestor tree. 
+    //315.
+    event.target.closest('li').classList.toggle('highlight');
+    //form.submit(); //has the disadvantage of not doing the form.addEventListener above.
+    button.click();
 });
+
