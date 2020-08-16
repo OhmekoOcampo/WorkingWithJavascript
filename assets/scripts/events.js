@@ -48,3 +48,33 @@ form.addEventListener('submit', event => {
 }); //listen for submit event from form element. This however will only briefly show your content in the
 //console window but it will disappear because the data will be sent to the "server" then page will reload.
 
+const div = document.querySelector('div');
+const button = document.querySelector('button');
+
+
+div.addEventListener('click', event => {
+    console.log('Clicked DIV');
+    console.log(event);
+});
+
+button.addEventListener('click', event => {
+    event.stopPropagation();
+    console.log('Clicked Button');
+    console.log(event);
+});
+
+const listItems = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+/*
+listItems.forEach(listItem => {
+    listItem.addEventListener('click', event => {
+        event.target.classList.toggle('highlight');
+    })
+});
+*/
+
+list.addEventListener('click', event => {
+    console.log(event.currentTarget); //Where currentTarget is the ul tag in this case.
+    event.target.classList.toggle('highlight');
+    event.target.closest('li').classList.toggle('highlight'); //closest exists on all dom objects and traverses the ancestor tree. 
+});
