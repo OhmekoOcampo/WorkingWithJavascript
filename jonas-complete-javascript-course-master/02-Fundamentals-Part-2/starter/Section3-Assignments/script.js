@@ -187,3 +187,57 @@ console.log(myCountry3);
 for (let voter = 1; voter <= 50; voter++) {
   console.log(`Voter number ${voter} is currently voting!`);
 }
+
+// (47) Looping Arrays, Breaking, and Continuing
+
+const populations2 = new Array(125800000, 329500000, 67390000, 109000000);
+
+let worldPop2 = 7900000000;
+const percentages2 = [];
+
+function percentageOfWorld147(population) {
+  return (population / worldPop2) * 100;
+}
+
+for (let i = 0; i <= populations2.length - 1; i++) {
+  percentages2.push(percentageOfWorld147(populations2[i]));
+}
+
+console.log(percentages2);
+
+// (48) Looping Backwards and Loops in Loops
+
+const listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i <= listOfNeighbours.length - 1; i++) {
+  console.log(listOfNeighbours[i]);
+  for (let j = 0; j <= listOfNeighbours[i].length - 1; j++) {
+    console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+  }
+}
+
+// (49) The While Loop
+console.log(
+  "While Loop Version of For Loop in 'Looping Arrays, Breaking, and Continuing'"
+);
+
+const populations3 = new Array(125800000, 329500000, 67390000, 109000000);
+
+let worldPop3 = 7900000000;
+const percentages3 = [];
+
+function percentageOfWorld147(population) {
+  return (population / worldPop2) * 100;
+}
+
+let i = 0;
+while (i <= populations3.length - 1) {
+  percentages3.push(percentageOfWorld147(populations3[i]));
+  i++;
+}
+
+console.log(percentages3);

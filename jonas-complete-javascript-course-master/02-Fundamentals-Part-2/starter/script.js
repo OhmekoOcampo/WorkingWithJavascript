@@ -356,7 +356,7 @@ jonas.statementJonas();
 */
 // (45) Coding Challenge #3
 
-// (46) Iteration: The for loop
+// (46) Iteration: The for loop - When you know how many iterations!
 
 //We want to avoid repetition like this so we use for loop, or other loops to make this looping succint.
 // console.log("Lifting weights repetition 1");
@@ -371,11 +371,63 @@ jonas.statementJonas();
 // console.log("Lifting weights repetition 10");
 
 //for loop keeps running while condition is true.
-for (let rep = 1; rep <= 10; rep++) {
-  console.log(`Lifting weights repetition ${rep}`);
-}
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`Lifting weights repetition ${rep}`);
+// }
 
 // (47) Looping Arrays, Breaking and Continuing:
+/*
+const jonas = [
+  "Jonas",
+  "Schmedtmann",
+  2037 - 1991,
+  "teacher",
+  ["Micheal", "Peter", "Steven"],
+  true,
+];
+const types = [];
+
+//console.log(jonas[0]);
+//console.log(jonas[1]);
+//...
+//console.log(jonas[4])
+
+for (let i = 0; i <= jonas.length - 1; i++) {
+  console.log(jonas[i], typeof jonas[i]);
+}
+
+for (let i = 0; i <= jonas.length - 1; i++) {
+  //types[i] = typeof jonas[i]; //filling an array.
+  types.push(typeof jonas[i]);
+}
+
+for (let i = 0; i <= types.length - 1; i++) {
+  console.log(types[i]);
+}
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i <= years.length - 1; i++) {
+  //ages[i] = 2037 - years[i];
+  ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+//continue and break
+console.log("----Continue Example----");
+for (let i = 0; i <= jonas.length - 1; i++) {
+  if (typeof jonas[i] !== "string") continue; //it will skip all the non-string elements in the array.
+  console.log(jonas[i], typeof jonas[i]);
+}
+console.log("----Break Example----");
+for (let i = 0; i <= jonas.length - 1; i++) {
+  if (typeof jonas[i] === "number") break; //it will skip all the non-string elements in the array.
+  console.log(jonas[i], typeof jonas[i]);
+}
+*/
+
+// (48) Looping Backwards and Loops in Loops
 
 const jonas = [
   "Jonas",
@@ -384,3 +436,37 @@ const jonas = [
   "teacher",
   ["Micheal", "Peter", "Steven"],
 ];
+
+for (let i = jonas.length - 1; i >= 0; i--) {
+  console.log(jonas[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`-------- Starting Exercise: ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Lifting weight repetition ${rep}`);
+  }
+}
+
+// (49) The While Loop - If you don't know how many iterations.
+//For Loop
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep}`);
+}
+
+//While Loop, equivalent.
+let i = 1;
+while (i <= 10) {
+  console.log(`Lifting weight repetition ${i}`);
+  i++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log("Loop is about to end...");
+}

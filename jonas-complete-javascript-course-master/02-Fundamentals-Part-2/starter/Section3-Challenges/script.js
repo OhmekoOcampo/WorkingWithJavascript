@@ -73,7 +73,7 @@ console.log(bills);
 console.log(tips);
 console.log(totals);
 
-// (45) Coding Challenge
+// (45) Coding Challenge #3
 const mark = {
   fullName: "Mark Miller",
   mass: 78,
@@ -105,3 +105,37 @@ if (mark.calcBMI() > john.calcBMI()) {
 } else {
   console.log(`John's and Mark's BMIs are equal!`);
 }
+
+// (50) Coding Challenge #4
+
+const bills2 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const example = [2, 3, 7];
+
+const tips2 = [];
+const totals2 = [];
+let total = 0;
+
+for (let i = 0; i <= bills2.length - 1; i++) {
+  //tips2[i] = calcTip(bills2[i]);
+  //totals2[i] = tips2[i] + bills2[i];
+  total = total + bills2[i];
+  tips2.push(calcTip(bills2[i]));
+  totals2.push(tips2[i] + bills2[i]);
+}
+console.log(total / bills2.length);
+console.log(tips2);
+console.log(totals2);
+
+const calcAverage = function (arr) {
+  let i = 0;
+  let total = 0;
+  console.log(arr);
+  while (i <= arr.length - 1) {
+    total = total + arr[i];
+    i++;
+  }
+  return total / arr.length;
+};
+
+console.log(calcAverage(bills2));
+console.log(calcAverage(example));
