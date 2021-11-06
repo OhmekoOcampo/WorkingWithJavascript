@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; include padding and bordering: width 100px, the other parts of the CSS box model won't be added to the width. */
+}
+
+body {
+  background-color: rgba(255, 255, 0, 0.575);
+  font-family: Arial;
+  font-size: 20px;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.first {
+  color: red;
+}
+
+#your-name {
+  background-color: orange;
+  border: 5px solid #444;
+  width: 400px;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+input,
+button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+a {
+  background-color: yellowgreen;
+}
+
+#your-name h2 {
+  color: olivedrab;
+}
+
+#course-image {
+  width: 300px;
+}
+
+/* CSS Notes
+
+1) Most properties aren't inherited, some are though like font-size, font-family etc...
+2) Since there are some default margins for some elements, so what we do is reset the margins with one universal selector. The almighty wildcard *. 
+3) images are displayed on a webpage as big as they could possible be unless you use CSS to style it. 
+*/
