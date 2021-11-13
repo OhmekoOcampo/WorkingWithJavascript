@@ -8,9 +8,38 @@ const dice3 = 'dice-3.png';
 const dice4 = 'dice-4.png';
 const dice5 = 'dice-5.png';
 const dice6 = 'dice-6.png';
-let currentPlayer = 'player1';
+let currentPlayer = '';
+activatePlayer1();
 
-//document.querySelector('.player--1').classList.add('player--active');
+function activatePlayer1() {
+  //activate player 1
+  currentPlayer = 'player1';
+  document.querySelector('.player--0').classList.add('player--active');
+  //document.querySelector('#name--0').classList.add('player--active');
+  //document.querySelector('#score--0').classList.add('player--active');
+  //document.querySelector('#current--0').classList.add('player--active');
+
+  //deactivate player 2
+  document.querySelector('.player--1').classList.remove('player--active');
+  //document.querySelector('#name--1').classList.remove('player--active');
+  //document.querySelector('#score--1').classList.remove('player--active');
+  //document.querySelector('#current--1').classList.remove('player--active');
+}
+
+function activatePlayer2() {
+  //activate player 2
+  currentPlayer = 'player2';
+  document.querySelector('.player--1').classList.add('player--active');
+  //document.querySelector('#name--1').classList.add('player--active');
+  //document.querySelector('#score--1').classList.add('player--active');
+  //document.querySelector('#current--1').classList.add('player--active');
+
+  //deactivate player 1
+  document.querySelector('.player--0').classList.remove('player--active');
+  //document.querySelector('#name--0').classList.remove('player--active');
+  //document.querySelector('#score--0').classList.remove('player--active');
+  //document.querySelector('#current--0').classList.remove('player--active');
+}
 
 document.querySelector('.btn--roll').addEventListener('click', function () {
   diceNumber = Math.trunc(Math.random() * 6) + 1;
@@ -18,13 +47,9 @@ document.querySelector('.btn--roll').addEventListener('click', function () {
   if (diceNumber === 1) {
     document.querySelector('.dice').src = dice1;
     if (currentPlayer === 'player1') {
-      //activate player 2
-      currentPlayer = 'player2';
-      document.querySelector('.player--1').classList.add('player--active');
-      document.querySelector('#name--1').classList.add('player-active');
-      document.querySelector('#score--1').classList.add('player-active');
-      document.querySelector('#current--1').classList.add('player-active');
-      //deactivate player 1
+      activatePlayer2();
+    } else if (currentPlayer === 'player2') {
+      activatePlayer1();
     }
   } else if (diceNumber === 2) {
     document.querySelector('.dice').src = dice2;
