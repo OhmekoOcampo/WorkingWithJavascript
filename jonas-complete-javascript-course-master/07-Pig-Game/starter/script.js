@@ -13,6 +13,9 @@ let scorePlayer1 = 0;
 let scorePlayer2 = 0;
 let totscorePlayer1 = 0;
 let totscorePlayer2 = 0;
+//document.querySelector(".dice").classList.add('hidden');
+let diceImage = document.getElementsByClassName('dice');
+diceImage[0].classList.add('hidden');
 activatePlayer1();
 
 function activatePlayer1() {
@@ -112,6 +115,8 @@ document.querySelector('.btn--hold').addEventListener('click', function () {
 document.querySelector('.btn--roll').addEventListener('click', function () {
   diceNumber = Math.trunc(Math.random() * 6) + 1;
   console.log('Inside the btn-roll!');
+
+  diceImage[0].classList.remove('hidden');
 
   if (diceNumber === 1) {
     document.querySelector('.dice').src = dice1;
