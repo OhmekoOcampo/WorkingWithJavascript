@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -27,3 +31,59 @@ const restaurant = {
     },
   },
 };
+
+///// (104) Destructuring Objects
+
+//we use the curly braces {} to desctructure just like we use [] to destructure arrays.
+
+const { name, openingHours, categories } = restaurant;
+console.log(name);
+
+///// (103) Destructuring Arrays
+
+/*
+Breaking large data structures into small data structures such as variables.
+
+*/
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr;
+console.log(x, y, z);
+
+let [first, second] = restaurant.categories;
+const [third, , fourth] = restaurant.categories; //Grabs the first item and third item in the list and places them into the variables named third and fourth respectively.
+console.log(first, second);
+console.log(third, fourth);
+
+//Swap without destructuring
+// const temp = first;
+// first = second;
+// second = temp;
+// console.log(first, second);
+
+//Swap using desctructuring
+[first, second] = [second, first];
+console.log(first, second);
+
+//Recieve 2 return values from a function.
+console.log(restaurant.order(2, 0));
+const [starter, main] = restaurant.order(2, 0);
+
+console.log(starter, main);
+
+const nested = [2, 4, [5, 6]];
+let [, something, arrsomething] = nested;
+console.log(something, arrsomething);
+
+//Nested destructuring
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+//Default values
+
+const [p = 1, q = 1, r = 1] = [8, 9]; //destructuring with default values.
+console.log(p, q, r);
