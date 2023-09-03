@@ -37,7 +37,7 @@ const restaurant = {
 //we use the curly braces {} to desctructure just like we use [] to destructure arrays.
 
 const { name, openingHours, categories } = restaurant;
-console.log(name);
+console.log(name, openingHours, categories);
 
 ///// (103) Destructuring Arrays
 
